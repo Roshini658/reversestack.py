@@ -1,0 +1,21 @@
+# Function to reverse stack using extra space (optimal)
+def reverse_stack(stack):
+    temp_stack = []  # create an empty stack
+    
+    # Move all elements from original stack to temp_stack
+    while len(stack) > 0:
+        temp_stack.append(stack.pop())  # pop from stack and push to temp_stack
+    
+    # Copy back to original stack
+    while len(temp_stack) > 0:
+        stack.append(temp_stack.pop())  # pop from temp_stack and push back
+
+
+# Example usage
+stack = [1, 2, 3, 4]
+
+print("Original Stack:", stack)
+
+reverse_stack(stack)
+
+print("Reversed Stack:", stack)
